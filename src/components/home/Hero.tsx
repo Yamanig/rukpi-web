@@ -132,7 +132,7 @@ export default function Hero() {
           <p className="hero-eyebrow font-mono text-[13px] uppercase tracking-[0.18em] text-teal">
             Rukun Payment Infrastructure
           </p>
-          g
+
           <h1 className="mt-6 font-display text-[44px] font-extrabold leading-[0.95] tracking-[-0.03em] text-txt sm:text-[64px] lg:text-[80px]">
             <span className="hero-line-1 block">Your Money,</span>
             <span className="hero-line-2 block bg-teal-sweep bg-clip-text text-transparent">
