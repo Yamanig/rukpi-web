@@ -20,11 +20,7 @@ const RAILS = [
   "SIPS",
   "AGENTS",
 ];
-const TICKER = [
-  "SUB-100MS QR SETTLEMENT",
-  "99.99% UPTIME TARGET",
-  "EXACTLY-ONCE EXECUTION",
-];
+const TICKER = ["SUB-100MS QR SETTLEMENT", "99.99% UPTIME TARGET", "EXACTLY-ONCE EXECUTION"];
 
 /** CSS fallback: static dots drifting on the hero background (reduced motion / no WebGL). */
 function CssFallbackDots() {
@@ -53,21 +49,13 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      const reduced = window.matchMedia(
-        "(prefers-reduced-motion: reduce)",
-      ).matches;
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduced) {
         gsap.set("[data-hero-reveal]", { opacity: 1, y: 0 });
         return;
       }
-      const split1 = new SplitText(".hero-line-1", {
-        type: "chars",
-        mask: "chars",
-      });
-      const split2 = new SplitText(".hero-line-2", {
-        type: "chars",
-        mask: "chars",
-      });
+      const split1 = new SplitText(".hero-line-1", { type: "chars", mask: "chars" });
+      const split2 = new SplitText(".hero-line-2", { type: "chars", mask: "chars" });
       const splitSub = new SplitText(".hero-sub", { type: "words" });
 
       const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
@@ -77,21 +65,9 @@ export default function Hero() {
           { yPercent: 110, duration: 0.9, stagger: 0.02 },
           0.1,
         )
-        .from(
-          splitSub.words,
-          { opacity: 0, y: 14, duration: 0.7, stagger: 0.03 },
-          0.4,
-        )
-        .from(
-          ".hero-chip",
-          { opacity: 0, y: 16, duration: 0.5, stagger: 0.06 },
-          0.7,
-        )
-        .from(
-          ".hero-cta",
-          { opacity: 0, y: 20, duration: 0.6, stagger: 0.1 },
-          1.0,
-        )
+        .from(splitSub.words, { opacity: 0, y: 14, duration: 0.7, stagger: 0.03 }, 0.4)
+        .from(".hero-chip", { opacity: 0, y: 16, duration: 0.5, stagger: 0.06 }, 0.7)
+        .from(".hero-cta", { opacity: 0, y: 20, duration: 0.6, stagger: 0.1 }, 1.0)
         .from(".hero-ticker", { opacity: 0, y: 24, duration: 0.7 }, 1.2)
         .from(".hero-scroll-hint", { opacity: 0, duration: 0.6 }, 1.4);
 
@@ -130,9 +106,8 @@ export default function Hero() {
       <div className="relative mx-auto flex w-full max-w-content flex-1 items-center px-6 pb-24 pt-[120px]">
         <div className="max-w-[720px]">
           <p className="hero-eyebrow font-mono text-[13px] uppercase tracking-[0.18em] text-teal">
-            Rukun Payment Infrastructure
+            Rukun Payment Infrastructure · Mogadishu
           </p>
-
           <h1 className="mt-6 font-display text-[44px] font-extrabold leading-[0.95] tracking-[-0.03em] text-txt sm:text-[64px] lg:text-[80px]">
             <span className="hero-line-1 block">Your Money,</span>
             <span className="hero-line-2 block bg-teal-sweep bg-clip-text text-transparent">
@@ -140,10 +115,9 @@ export default function Hero() {
             </span>
           </h1>
           <p className="hero-sub mt-8 max-w-[620px] text-lg leading-[1.6] text-txt-sub sm:text-xl">
-            RUKPI connects Somalia's fragmented mobile-money ecosystem — EVC
-            Plus, ZAAD, Sahal, e-Dahab, the bank wallets E-BESA, MY-CASH and
-            Premier Wallet, and the SIPS bank hub — into one real-time,
-            USD-denominated clearing layer.
+            RUKPI connects Somalia's fragmented mobile-money ecosystem — EVC Plus, ZAAD,
+            Sahal, e-Dahab, the bank wallets E-BESA, MY-CASH and Premier Wallet, and the SIPS
+            bank hub — into one real-time, USD-denominated clearing layer.
           </p>
           <div className="mt-8 flex flex-wrap gap-2">
             {RAILS.map((r) => (
@@ -176,12 +150,8 @@ export default function Hero() {
         <div className="mx-auto flex max-w-content flex-wrap items-center gap-x-6 gap-y-2 px-6 py-5">
           {TICKER.map((t, i) => (
             <span key={t} className="flex items-center gap-6">
-              <span className="font-mono text-[13px] tracking-[0.05em] text-txt-ter">
-                {t}
-              </span>
-              {i < TICKER.length - 1 && (
-                <span className="h-1 w-1 rounded-full bg-teal" />
-              )}
+              <span className="font-mono text-[13px] tracking-[0.05em] text-txt-ter">{t}</span>
+              {i < TICKER.length - 1 && <span className="h-1 w-1 rounded-full bg-teal" />}
             </span>
           ))}
         </div>

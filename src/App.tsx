@@ -7,6 +7,8 @@ import Merchants from "./pages/Merchants";
 import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
+import Security from "./pages/Security";
+import Technology from "./pages/Technology";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="company" element={<Company />} />
         <Route path="contact" element={<Contact />} />
         <Route path="legal" element={<Legal />} />
+        <Route path="security" element={<Security />} />
+        <Route path="technology" element={<Technology />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

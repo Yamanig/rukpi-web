@@ -12,6 +12,15 @@ const COLUMNS: { title: string; links: { label: string; to: string; hint?: strin
     ],
   },
   {
+    title: "Platform",
+    links: [
+      { label: "Security & Trust", to: "/security" },
+      { label: "Technology", to: "/technology" },
+      { label: "Developer API", to: "/merchants#api" },
+      { label: "Pilot Program", to: "/contact" },
+    ],
+  },
+  {
     title: "Company",
     links: [
       { label: "About", to: "/company" },
